@@ -1,7 +1,10 @@
-class Orange():
+from Cat import Cat
 
-    def __init__(self, color):
+class Orange(Cat):
+
+    def __init__(self, name, age, color):
         self._color = color
+        super().__init__(name, age)
 
     @property
     def color(self):
@@ -13,3 +16,10 @@ class Orange():
             self._color = color
         else:
             raise Exception
+    
+    def meow(self):
+        print("I am an orange cat!")
+        
+timmy = Orange("Timmy", 4, "orange")
+
+print(timmy)
